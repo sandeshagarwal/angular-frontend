@@ -1,0 +1,78 @@
+<div class="container custom-container-2">
+  <!-- Show it when there is no employee -->
+  <div class="no-data text-center" *ngIf="Employee.length == 0">
+    <p>Loading...!</p>
+  </div>
+
+  <!-- Employees list table, it hides when there is no employee -->
+  <div *ngIf="Employee.length !== 0">
+    <button class="btn btn-outline-primary" routerLink="/create-sales-bill">
+      Add Sales 
+    </button>
+    <!-- <app-sales-search></app-sales-search> -->
+    <input type="number" [(ngModel)]="searchbySale">
+    <button class="btn btn-outline-primary" (click)="searchbySales(searchbySale)">
+      Search by Sales Id 
+    </button>
+    <input type="number" [(ngModel)]="searchbyCustomers">
+    <button class="btn btn-outline-primary" (click)="searchbyCustomer(searchbyCustomers)" routerLink="/sales-search/{{searchbyCustomers}}">
+      Search by Customer Id
+    </button>
+    <h3 class="mb-3 text-center">Sales List</h3>
+
+    <div class="col-md-12">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Sales Id</th>
+            <th scope="col">Date of Purchase</th>
+            <th scope="col">Customer Id</th>
+            <th scope="col">Fuel</th>
+            <th scope="col">Vehicle Segment</th>
+            <th scope="col">Selling Price</th>
+            <th scope="col">Power Steering</th>
+            <th scope="col">Airbags</th>
+            <th scope="col">Sunroof</th>
+            <th scope="col">Matt Finish</th>
+            <th scope="col">Music System</th>
+            <th scope="col">Customer Gender</th>
+            <th scope="col">Customer Income Group</th>
+            <th scope="col">Customer Region</th>
+            <th scope="col">Customer Marital Status</th>
+            <th scope="col">Options</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let employee of Employee">
+            <td>{{ employee.sales_id }}</td>
+            <td>{{ employee.date_of_purchase }}</td>
+            <td>{{ employee.customer_id }}</td>
+            <td>{{ employee.fuel }}</td>
+            <td>{{ employee.vehicle_segment }}</td>
+            <td>{{ employee.selling_price }}</td>
+            <td>{{ employee.power_steering }}</td>
+            <td>{{ employee.airbags }}</td>
+            <td>{{ employee.sunroof }}</td>
+            <td>{{ employee.matt_finish }}</td>
+            <td>{{ employee.music_system }}</td>
+            <td>{{ employee.customer_gender }}</td>
+            <td>{{ employee.customer_income_group }}</td>
+            <td>{{ employee.customer_region }}</td>
+            <td>{{ employee.customer_marital_status }}</td>
+
+
+      
+            <td>
+              <span class="edit" routerLink="/sales-edit/{{ employee.customer_id }}"
+                >Edit</span>
+                /
+              <span class="delete" (click)="deleteEmployee(employee.customer_id)"
+                >Delete</span
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

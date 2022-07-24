@@ -1,0 +1,46 @@
+<p>sales-search works!</p>
+<div *ngIf="Employee.length !== 0">
+    <div class="col-md-12">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Sales Id</th>
+            <th scope="col">Date of Purchase</th>
+            <th scope="col">Customer Id</th>
+            <th scope="col">Fuel</th>
+            <th scope="col">Vehicle Segment</th>
+            <th scope="col">Selling Price</th>
+            <th scope="col">Power Steering</th>
+            <th scope="col">Airbags</th>
+            <th scope="col">Sunroof</th>
+            <th scope="col">Matt Finish</th>
+            <th scope="col">Music System</th>
+            <th scope="col">Customer Gender</th>
+            <th scope="col">Customer Income Group</th>
+            <th scope="col">Customer Region</th>
+            <th scope="col">Customer Marital Status</th>
+            <th scope="col">Options</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ Employee.sales_id }}</td>
+            <td>{{ Employee.date_of_purchase }}</td>
+            <td>{{ Employee.customer_id }}</td>
+            <td>{{ Employee.fuel }}</td>
+            <td>{{ Employee.vehicle_segment }}</td>
+            <td>{{ Employee.selling_price }}</td>
+            <td>{{ Employee.power_steering }}</td>
+            <td>{{ Employee.airbags }}</td>
+            <td>{{ Employee.sunroof }}</td>
+            <td>{{ Employee.matt_finish }}</td>
+            <td>{{ Employee.music_system }}</td>
+            <td>{{ Employee.customer_gender }}</td>
+            <td>{{ Employee.customer_income_group }}</td>
+            <td>{{ Employee.customer_region }}</td>
+            <td>{{ Employee.customer_marital_status }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
